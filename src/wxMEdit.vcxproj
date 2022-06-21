@@ -79,8 +79,8 @@
     <LibraryPath>C:\Working\wxWidgets\lib\vc_x64_lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>c:\working\icu4c\source\i18n;c:\working\icu4c\source\common;c:\Program Files (x86)\CURL\include;c:\boost\include\boost-1_80\;c:\working\wxWidgets\include;C:\Working\wxWidgets\include\msvc;$(IncludePath)</IncludePath>
-    <LibraryPath>c:\Program Files (x86)\CURL\lib;C:\Working\icu4c\lib64;C:\Working\wxWidgets\lib\vc_x64_lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>c:\working\icu\icu\icu4c\source\i18n;c:\working\icu\icu\icu4c\source\common;c:\Program Files (x86)\CURL\include;c:\boost\include\boost-1_80\;c:\working\wxWidgets\include;C:\Working\wxWidgets\include\msvc;$(IncludePath)</IncludePath>
+    <LibraryPath>c:\Program Files (x86)\CURL\lib;C:\Working\icu\icu\icu4c\lib64;C:\Working\wxWidgets\lib\vc_x64_lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>c:\working\icu4c\source\i18n;c:\working\icu4c\source\common;c:\Program Files (x86)\CURL\include;c:\boost\include\boost-1_80\;c:\working\wxWidgets\include;C:\Working\wxWidgets\include\msvc;$(IncludePath)</IncludePath>
