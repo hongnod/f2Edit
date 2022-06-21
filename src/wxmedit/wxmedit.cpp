@@ -18,7 +18,7 @@
 #include "wxm_undo.h"
 #include "../mad_utils.h"
 #include "../xm/uutils.h"
-
+#include <wx/fontutil.h>
 #ifdef _MSC_VER
 # pragma warning( push )
 # pragma warning( disable : 4996 )
@@ -9686,8 +9686,9 @@ struct IMEAdjuster
         if (m_hImc == (HIMC)0 || ImmGetOpenStatus(m_hImc) != TRUE)
             return;
 
-        LOGFONT lf;
-        wxFillLogFont(&lf, &font);
+        LOGFONT lf = { 0 };
+        //wxFillLogFont(&lf, &font);
+        wxNativeFontInfo info(lf);
         ImmSetCompositionFont(m_hImc, &lf);
 
         UpdatePosition();

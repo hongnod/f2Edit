@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d5274b3a-b7bd-4990-8c10-b846b6339ddd}</ProjectGuid>
+    <RootNamespace>wxMEdit</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>c:\working\icu4c\source\i18n;c:\working\icu4c\source\common;c:\Program Files (x86)\CURL\include;c:\boost\include\boost-1_80\;c:\working\wxWidgets\include;C:\Working\wxWidgets\include\msvc;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Working\wxWidgets\lib\vc_x64_lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>c:\working\icu4c\source\i18n;c:\working\icu4c\source\common;c:\Program Files (x86)\CURL\include;c:\boost\include\boost-1_80\;c:\working\wxWidgets\include;C:\Working\wxWidgets\include\msvc;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Working\wxWidgets\lib\vc_x64_lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>c:\working\icu4c\source\i18n;c:\working\icu4c\source\common;c:\Program Files (x86)\CURL\include;c:\boost\include\boost-1_80\;c:\working\wxWidgets\include;C:\Working\wxWidgets\include\msvc;$(IncludePath)</IncludePath>
+    <LibraryPath>c:\Program Files (x86)\CURL\lib;C:\Working\icu4c\lib64;C:\Working\wxWidgets\lib\vc_x64_lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>c:\working\icu4c\source\i18n;c:\working\icu4c\source\common;c:\Program Files (x86)\CURL\include;c:\boost\include\boost-1_80\;c:\working\wxWidgets\include;C:\Working\wxWidgets\include\msvc;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Working\wxWidgets\lib\vc_x64_lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>imm32.lib;libcurl-d_imp.lib;icutud.lib;icudt.lib;icuucd.lib;icuind.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="dialog\wxmedit_about_dialog.h" />
+    <ClInclude Include="dialog\wxmedit_options_dialog.h" />
+    <ClInclude Include="dialog\wxm_conv_enc_dialog.h" />
+    <ClInclude Include="dialog\wxm_enumeration_dialog.h" />
+    <ClInclude Include="dialog\wxm_file_association_dialog.h" />
+    <ClInclude Include="dialog\wxm_find_in_files_dialog.h" />
+    <ClInclude Include="dialog\wxm_highlighting_dialog.h" />
+    <ClInclude Include="dialog\wxm_purge_histories_dialog.h" />
+    <ClInclude Include="dialog\wxm_search_replace_dialog.h" />
+    <ClInclude Include="dialog\wxm_sort_dialog.h" />
+    <ClInclude Include="dialog\wxm_word_count_dialog.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="mad_utils.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="wxMEdit.h" />
+    <ClInclude Include="wxmedit\caret_new.h" />
+    <ClInclude Include="wxmedit\clipbrd_gtk.h" />
+    <ClInclude Include="wxmedit\trad_simp.h" />
+    <ClInclude Include="wxmedit\wxmedit.h" />
+    <ClInclude Include="wxmedit\wxmedit_command.h" />
+    <ClInclude Include="wxmedit\wxm_lines.h" />
+    <ClInclude Include="wxmedit\wxm_syntax.h" />
+    <ClInclude Include="wxmedit\wxm_undo.h" />
+    <ClInclude Include="wxmedit_app.h" />
+    <ClInclude Include="wxmedit_frame.h" />
+    <ClInclude Include="wxm\case_conv.h" />
+    <ClInclude Include="wxm\choice_map.hpp" />
+    <ClInclude Include="wxm\def.h" />
+    <ClInclude Include="wxm\edit\inframe.h" />
+    <ClInclude Include="wxm\edit\simple.h" />
+    <ClInclude Include="wxm\edit\single_line.h" />
+    <ClInclude Include="wxm\recent_list.h" />
+    <ClInclude Include="wxm\searcher.h" />
+    <ClInclude Include="wxm\status_bar.h" />
+    <ClInclude Include="wxm\update.h" />
+    <ClInclude Include="wxm\utils.h" />
+    <ClInclude Include="wxm\wx_avoid_wxmsw_bug4373.h" />
+    <ClInclude Include="wxm\wx_icu.h" />
+    <ClInclude Include="wxm_command.h" />
+    <ClInclude Include="wxm_plugin.h" />
+    <ClInclude Include="wxm_printout.h" />
+    <ClInclude Include="xm\cxx11.h" />
+    <ClInclude Include="xm\encdet.h" />
+    <ClInclude Include="xm\encoding\cp20932.h" />
+    <ClInclude Include="xm\encoding\doublebyte.h" />
+    <ClInclude Include="xm\encoding\encoding.h" />
+    <ClInclude Include="xm\encoding\encoding_def.h" />
+    <ClInclude Include="xm\encoding\external.h" />
+    <ClInclude Include="xm\encoding\gb18030.h" />
+    <ClInclude Include="xm\encoding\multibyte.h" />
+    <ClInclude Include="xm\encoding\singlebyte.h" />
+    <ClInclude Include="xm\encoding\unicode.h" />
+    <ClInclude Include="xm\line_enc_adapter.h" />
+    <ClInclude Include="xm\mad_encdet.h" />
+    <ClInclude Include="xm\remote.h" />
+    <ClInclude Include="xm\ublock.h" />
+    <ClInclude Include="xm\utils.hpp" />
+    <ClInclude Include="xm\uutils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="wxMEdit.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico" />
+    <Image Include="wxMEdit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dialog\wxmedit_about_dialog.cpp" />
+    <ClCompile Include="dialog\wxmedit_options_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_conv_enc_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_enumeration_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_file_association_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_find_in_files_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_highlighting_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_purge_histories_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_search_replace_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_sort_dialog.cpp" />
+    <ClCompile Include="dialog\wxm_word_count_dialog.cpp" />
+    <ClCompile Include="mad_utils.cpp" />
+    <ClCompile Include="wxmedit\caret_new.cpp" />
+    <ClCompile Include="wxmedit\clipbrd_gtk.cpp" />
+    <ClCompile Include="wxmedit\trad_simp.cpp" />
+    <ClCompile Include="wxmedit\wxmedit.cpp" />
+    <ClCompile Include="wxmedit\wxmedit_advanced.cpp" />
+    <ClCompile Include="wxmedit\wxmedit_basic.cpp" />
+    <ClCompile Include="wxmedit\wxmedit_command.cpp" />
+    <ClCompile Include="wxmedit\wxm_lines.cpp" />
+    <ClCompile Include="wxmedit\wxm_syntax.cpp" />
+    <ClCompile Include="wxmedit\wxm_undo.cpp" />
+    <ClCompile Include="wxmedit_app.cpp" />
+    <ClCompile Include="wxmedit_frame.cpp" />
+    <ClCompile Include="wxm\case_conv.cpp" />
+    <ClCompile Include="wxm\edit\inframe.cpp" />
+    <ClCompile Include="wxm\edit\simple.cpp" />
+    <ClCompile Include="wxm\edit\single_line.cpp" />
+    <ClCompile Include="wxm\recent_list.cpp" />
+    <ClCompile Include="wxm\searcher.cpp" />
+    <ClCompile Include="wxm\status_bar.cpp" />
+    <ClCompile Include="wxm\update.cpp" />
+    <ClCompile Include="wxm\utils.cpp" />
+    <ClCompile Include="wxm\wx_icu.cpp" />
+    <ClCompile Include="wxm_plugin.cpp" />
+    <ClCompile Include="wxm_printout.cpp" />
+    <ClCompile Include="xm\encdet.cpp" />
+    <ClCompile Include="xm\encoding\cp20932.cpp" />
+    <ClCompile Include="xm\encoding\doublebyte.cpp" />
+    <ClCompile Include="xm\encoding\encoding.cpp" />
+    <ClCompile Include="xm\encoding\gb18030.cpp" />
+    <ClCompile Include="xm\encoding\multibyte.cpp" />
+    <ClCompile Include="xm\encoding\singlebyte.cpp" />
+    <ClCompile Include="xm\encoding\unicode.cpp" />
+    <ClCompile Include="xm\mad_encdet.cpp" />
+    <ClCompile Include="xm\remote.cpp" />
+    <ClCompile Include="xm\ublock.cpp" />
+    <ClCompile Include="xm\ublock_des.cpp" />
+    <ClCompile Include="xm\uutils.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

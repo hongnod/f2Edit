@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="wxm">
+      <UniqueIdentifier>{0ed469d2-3410-4d19-b9d3-a634e13e67ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wxm\edit">
+      <UniqueIdentifier>{fd4ed430-be04-4232-b9eb-9003c9549da4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog">
+      <UniqueIdentifier>{a2c2ef03-7634-44e3-ae8b-85b317ca689c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wxmedit">
+      <UniqueIdentifier>{e17f9876-3598-4d8d-913f-3fdb437120b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xm">
+      <UniqueIdentifier>{708566b4-8125-4f56-8055-a747c3ddde07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xm\encoding">
+      <UniqueIdentifier>{422b2c7c-0656-4b20-92db-7272c0236da7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wxMEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mad_utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm_command.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm_plugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm_printout.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit_app.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit_frame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_conv_enc_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_enumeration_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_file_association_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_find_in_files_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_highlighting_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_purge_histories_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_search_replace_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_sort_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxm_word_count_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxmedit_about_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog\wxmedit_options_dialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\case_conv.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\choice_map.hpp">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\def.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\recent_list.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\searcher.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\status_bar.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\update.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\utils.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\wx_avoid_wxmsw_bug4373.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\wx_icu.h">
+      <Filter>wxm</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\edit\inframe.h">
+      <Filter>wxm\edit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\edit\simple.h">
+      <Filter>wxm\edit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxm\edit\single_line.h">
+      <Filter>wxm\edit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit\caret_new.h">
+      <Filter>wxmedit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit\clipbrd_gtk.h">
+      <Filter>wxmedit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit\trad_simp.h">
+      <Filter>wxmedit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit\wxm_lines.h">
+      <Filter>wxmedit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit\wxm_syntax.h">
+      <Filter>wxmedit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit\wxm_undo.h">
+      <Filter>wxmedit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit\wxmedit.h">
+      <Filter>wxmedit</Filter>
+    </ClInclude>
+    <ClInclude Include="wxmedit\wxmedit_command.h">
+      <Filter>wxmedit</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\cxx11.h">
+      <Filter>xm</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encdet.h">
+      <Filter>xm</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\line_enc_adapter.h">
+      <Filter>xm</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\mad_encdet.h">
+      <Filter>xm</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\remote.h">
+      <Filter>xm</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\ublock.h">
+      <Filter>xm</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\utils.hpp">
+      <Filter>xm</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\uutils.h">
+      <Filter>xm</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\cp20932.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\doublebyte.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\encoding.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\encoding_def.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\external.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\gb18030.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\multibyte.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\singlebyte.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="xm\encoding\unicode.h">
+      <Filter>xm\encoding</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="wxMEdit.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="wxMEdit.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mad_utils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm_plugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm_printout.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit_app.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit_frame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_conv_enc_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_enumeration_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_file_association_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_find_in_files_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_highlighting_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_purge_histories_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_search_replace_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_sort_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxm_word_count_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxmedit_about_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog\wxmedit_options_dialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\case_conv.cpp">
+      <Filter>wxm</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\recent_list.cpp">
+      <Filter>wxm</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\searcher.cpp">
+      <Filter>wxm</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\status_bar.cpp">
+      <Filter>wxm</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\update.cpp">
+      <Filter>wxm</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\utils.cpp">
+      <Filter>wxm</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\wx_icu.cpp">
+      <Filter>wxm</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\edit\inframe.cpp">
+      <Filter>wxm\edit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\edit\simple.cpp">
+      <Filter>wxm\edit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxm\edit\single_line.cpp">
+      <Filter>wxm\edit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\caret_new.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\clipbrd_gtk.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\trad_simp.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\wxm_lines.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\wxm_syntax.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\wxm_undo.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\wxmedit.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\wxmedit_advanced.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\wxmedit_basic.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="wxmedit\wxmedit_command.cpp">
+      <Filter>wxmedit</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\encdet.cpp">
+      <Filter>xm</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\mad_encdet.cpp">
+      <Filter>xm</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\remote.cpp">
+      <Filter>xm</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\ublock.cpp">
+      <Filter>xm</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\ublock_des.cpp">
+      <Filter>xm</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\uutils.cpp">
+      <Filter>xm</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\encoding\cp20932.cpp">
+      <Filter>xm\encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\encoding\doublebyte.cpp">
+      <Filter>xm\encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\encoding\encoding.cpp">
+      <Filter>xm\encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\encoding\gb18030.cpp">
+      <Filter>xm\encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\encoding\multibyte.cpp">
+      <Filter>xm\encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\encoding\singlebyte.cpp">
+      <Filter>xm\encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="xm\encoding\unicode.cpp">
+      <Filter>xm\encoding</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
