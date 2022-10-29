@@ -8,7 +8,7 @@
 
 #include "multibyte.h"
 #include "../cxx11.h"
-
+#include <wx/defs.h>
 #include <boost/scoped_array.hpp>
 
 #ifdef _DEBUG

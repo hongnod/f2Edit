@@ -38,9 +38,9 @@ public:
         // default - use Create()
     wxCaretNew() : m_timer(this) { InitGeneric(); }
         // creates a block caret associated with the given window
-    wxCaretNew(wxWindowBase *window, int width, int height)
+    wxCaretNew(wxWindow *window, int width, int height)
         : wxCaret(window, width, height), m_timer(this) { InitGeneric(); }
-    wxCaretNew(wxWindowBase *window, const wxSize& size)
+    wxCaretNew(wxWindow *window, const wxSize& size)
         : wxCaret(window, size), m_timer(this) { InitGeneric(); }
 
     virtual ~wxCaretNew();
