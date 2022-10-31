@@ -13,7 +13,7 @@
 #include "mad_utils.h"
 #include "wxm/utils.h"
 #include "wxm/update.h"
-#include "xm/remote.h"
+//#include "xm/remote.h"
 #include "dialog/wxmedit_options_dialog.h"
 
 #include "wxmedit/wxmedit.h"
@@ -266,7 +266,7 @@ bool MadEditApp::OnInit()
 {
     xm::EncodingManager::PreInit();
 
-    xm::RemoteAccessInit();
+    //xm::RemoteAccessInit();
 
     wxm::AppPath::Instance().Init(GetAppName());
 
@@ -429,7 +429,7 @@ bool MadEditApp::OnInit()
 
 int MadEditApp::OnExit()
 {
-    xm::RemoteAccessCleanup();
+   // xm::RemoteAccessCleanup();
 
     // save settings in FrameClose();
     return 0;

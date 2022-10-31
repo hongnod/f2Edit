@@ -10,7 +10,7 @@
 #include "../xm/cxx11.h"
 #include "def.h"
 #include "utils.h"
-#include "../xm/remote.h"
+//#include "../xm/remote.h"
 #include "../wxmedit_frame.h"
 
 #ifdef _MSC_VER
@@ -123,18 +123,18 @@ void ConfirmUpdate(bool notify_all)
 
 std::string GetVersionFromRemoteChangeLog()
 {
-	std::string str(xm::GetRemoteText("https://raw.github.com/wxMEdit/wxMEdit/master/ChangeLog"));
+	// std::string str(xm::GetRemoteText("https://raw.github.com/wxMEdit/wxMEdit/master/ChangeLog"));
 
-	size_t poslf1 = str.find_first_of('\n', 0);
-	size_t poslf2 = str.find_first_of('\n', poslf1+1);
-	size_t poslf3 = str.find_first_of('\n', poslf2+1);
+	// size_t poslf1 = str.find_first_of('\n', 0);
+	// size_t poslf2 = str.find_first_of('\n', poslf1+1);
+	// size_t poslf3 = str.find_first_of('\n', poslf2+1);
 
-	std::string ver_line = str.substr(poslf2+1, poslf3-poslf2-1);
+	// std::string ver_line = str.substr(poslf2+1, poslf3-poslf2-1);
 
-	static const xp::sregex ver_regex = xp::sregex::compile("[0-9]+\\.[0-9]+(?:\\.[0-9]+[\\.-][0-9]+)?");
-	xp::smatch what;
-	if (xp::regex_search(ver_line, what, ver_regex))
-		return algo::replace_all_copy(what[0].str(), "-", ".");
+	// static const xp::sregex ver_regex = xp::sregex::compile("[0-9]+\\.[0-9]+(?:\\.[0-9]+[\\.-][0-9]+)?");
+	// xp::smatch what;
+	// if (xp::regex_search(ver_line, what, ver_regex))
+	// 	return algo::replace_all_copy(what[0].str(), "-", ".");
 
 	return std::string();
 }

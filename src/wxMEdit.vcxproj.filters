@@ -171,9 +171,6 @@
     <ClInclude Include="xm\mad_encdet.h">
       <Filter>xm</Filter>
     </ClInclude>
-    <ClInclude Include="xm\remote.h">
-      <Filter>xm</Filter>
-    </ClInclude>
     <ClInclude Include="xm\ublock.h">
       <Filter>xm</Filter>
     </ClInclude>
@@ -337,9 +334,6 @@
       <Filter>xm</Filter>
     </ClCompile>
     <ClCompile Include="xm\mad_encdet.cpp">
-      <Filter>xm</Filter>
-    </ClCompile>
-    <ClCompile Include="xm\remote.cpp">
       <Filter>xm</Filter>
     </ClCompile>
     <ClCompile Include="xm\ublock.cpp">

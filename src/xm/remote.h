@@ -9,13 +9,13 @@
 #ifndef _WXM_REMOTE_H_
 #define _WXM_REMOTE_H_
 
-#include <string>
+// #include <string>
 
-namespace xm
-{
-	bool RemoteAccessInit();
-	void RemoteAccessCleanup();
-	std::string GetRemoteText(const std::string& url);	
-} //namespace wxm
+// namespace xm
+// {
+// 	bool RemoteAccessInit();
+// 	void RemoteAccessCleanup();
+// 	std::string GetRemoteText(const std::string& url);	
+// } //namespace wxm
 
 #endif //_WXM_REMOTE_H_
