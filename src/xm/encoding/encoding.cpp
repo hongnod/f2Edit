@@ -15,11 +15,11 @@
 #include "gb18030.h"
 #include "external.h"
 
-#include <boost/foreach.hpp>
+//#include <boost/foreach.hpp>
 #include <boost/static_assert.hpp>
 #include <boost/assign/list_inserter.hpp>
 #include <boost/assign/list_of.hpp>
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 #include <boost/algorithm/string/predicate.hpp>
 
 #ifdef _DEBUG
@@ -281,7 +281,7 @@ std::wstring EncodingManager::EncodingGroupToName(EncodingGroupID gid)
 
 void EncodingManager::FreeEncodings()
 {
-	BOOST_FOREACH(EncInstMap::value_type val, m_inst_map)
+	for(EncInstMap::value_type val : m_inst_map)
 	{
 		if (m_sysenc == val.second)
 			m_sysenc = nullptr;

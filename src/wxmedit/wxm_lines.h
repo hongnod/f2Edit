@@ -39,7 +39,7 @@
 #include <unicode/unistr.h>
 using namespace U_ICU_NAMESPACE;
 
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 
 #include <vector>
 #include <list>
@@ -591,7 +591,7 @@ private:  // NextUChar()
     bool m_manual;
 
     UErrorCode m_line_bi_status;
-    boost::scoped_ptr<BreakIterator> m_line_bi;
+    std::unique_ptr<BreakIterator> m_line_bi;
 
     virtual void MoveUChar32Bytes(xm::UCQueue &ucqueue, ucs4_t uc, size_t len) override;
     virtual ubyte* BufferLoadBytes(int64_t& rest, size_t buf_len) override;

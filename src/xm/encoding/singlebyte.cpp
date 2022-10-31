@@ -9,7 +9,7 @@
 #include "singlebyte.h"
 #include "../cxx11.h"
 
-#include <boost/scoped_ptr.hpp>
+////#include <boost/scoped_ptr.hpp>
 
 #ifdef _DEBUG
 #include <crtdbg.h>
@@ -232,7 +232,7 @@ void SingleByteEncoding::MultiByteInit()
 {
 	m_icucnv = new ICUConverter(m_innername);
 
-	boost::scoped_ptr<SingleByteEncodingTableFixer>enc_fix(CreateSingleByteEncodingTableFixer());
+	std::unique_ptr<SingleByteEncodingTableFixer>enc_fix(CreateSingleByteEncodingTableFixer());
 
 	char singlebyte[1];
 	UChar32 ch;

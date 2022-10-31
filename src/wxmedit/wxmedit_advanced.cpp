@@ -16,7 +16,7 @@
 #include "../mad_utils.h"
 #include "../wxm/searcher.h"
 
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 #include <boost/algorithm/string/predicate.hpp>
 
 #include <algorithm>
@@ -1255,7 +1255,7 @@ void MadEdit::WordCount(bool selection, wxm::WordCountData& data)
     xm::UCQueue ucqueue;
     m_Lines->InitNextUChar(lit, linepos);
     int idx=0, count=0;
-    boost::scoped_ptr<xm::WordCounter> word_counter(new xm::AccumulativeWordCounter(m_word_bi, 0x4000));
+    std::unique_ptr<xm::WordCounter> word_counter(new xm::AccumulativeWordCounter(m_word_bi, 0x4000));
 
     while (nowpos < endpos)
     {

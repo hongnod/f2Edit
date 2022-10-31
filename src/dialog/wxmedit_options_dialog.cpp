@@ -37,8 +37,8 @@
 #include <wx/fileconf.h>
 #include <wx/config.h>
 
-#include <boost/foreach.hpp>
-#include <boost/scoped_ptr.hpp>
+//#include <boost/foreach.hpp>
+//#include <boost/scoped_ptr.hpp>
 
 #include <algorithm>
 
@@ -767,15 +767,15 @@ WXMEditOptionsDialog::WXMEditOptionsDialog(wxWindow* parent,wxWindowID id)
 	}
 	WxComboBoxLanguage->SetValue(systemlang);
 
-	BOOST_FOREACH(wxString peroid, wxm::UpdatePeriods::Instance().GetTitles())
+	for(auto &peroid : wxm::UpdatePeriods::Instance().GetTitles())
 		WxComboBoxUpdatesCheckingPeriod->Append(peroid);
 	WxComboBoxUpdatesCheckingPeriod->SetValue(wxm::UpdatePeriods::Instance().GetDefaultTitle());
 
-	BOOST_FOREACH(wxString behavior, wxm::HexAreaClipboardCopyProxy::Instance().GetTitles())
+	for(auto &behavior : wxm::HexAreaClipboardCopyProxy::Instance().GetTitles())
 		WxComboBoxBehaviorCopyInHexArea->Append(behavior);
 	WxComboBoxBehaviorCopyInHexArea->SetValue(wxm::HexAreaClipboardCopyProxy::Instance().GetDefaultTitle());
 
-	BOOST_FOREACH(wxString behavior, wxm::HexAreaClipboardPasteProxy::Instance().GetTitles())
+	for(auto &behavior: wxm::HexAreaClipboardPasteProxy::Instance().GetTitles())
 		WxComboBoxPasteAsHexString->Append(behavior);
 	WxComboBoxPasteAsHexString->SetValue(wxm::HexAreaClipboardPasteProxy::Instance().GetDefaultTitle());
 
@@ -1002,7 +1002,7 @@ void WXMEditOptionsDialog::LoadOptions(void)
 	WxCheckBoxRestoreCaretPos->SetValue(bb);
 
 #ifdef __WXMSW__
-	boost::scoped_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + wxT("*\\shell\\wxMEdit\\command")) );
+	std::unique_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + wxT("*\\shell\\wxMEdit\\command")) );
 	if(pRegKey->Exists())
 	{
 		wxString str;

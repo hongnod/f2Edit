@@ -38,9 +38,10 @@
 #include <unicode/numfmt.h>
 using namespace U_ICU_NAMESPACE;
 
-#include <boost/shared_ptr.hpp>
-#include <boost/scoped_ptr.hpp>
-#include <boost/function.hpp>
+//#include <boost/shared_ptr.hpp>
+#include<memory>
+////#include <boost/scoped_ptr.hpp>
+//#include <boost/function.hpp>
 
 #include <limits>
 #include <vector>
@@ -75,7 +76,7 @@ namespace wxm
 	protected:
 		virtual void ToHalfWidth(UnicodeString& us) = 0;
 		virtual void ToFullWidth(UnicodeString& us) = 0;
-		boost::scoped_ptr<Transliterator> m_fwtr;
+		std::unique_ptr<Transliterator> m_fwtr;
 	};
 
 	struct NSIPadding
@@ -124,7 +125,7 @@ namespace wxm
 			return DecFormat(n, groupping);
 		}
 
-		boost::scoped_ptr <NumberFormat> m_icufmt;
+		std::unique_ptr <NumberFormat> m_icufmt;
 		size_t m_len;
 		bool m_grouping;
 		bool m_fullwidth;
@@ -132,7 +133,7 @@ namespace wxm
 		bool m_padzero;
 	};
 
-	typedef boost::shared_ptr<NumSysBase> NumSysSharedPtr;
+	typedef std::shared_ptr<NumSysBase> NumSysSharedPtr;
 	class NumberingSystemConfig: public ChoiceMap <NumberingSystemConfig, NumSysSharedPtr>
 	{
 		friend class ChoiceMap <NumberingSystemConfig, NumSysSharedPtr>;
@@ -268,8 +269,8 @@ class WXMEnumerationDialog: public wxDialog
 		bool m_degressive;
 		bool m_exponential;
 
-		typedef boost::function<bool(int64_t, int64_t)> CmpFunc;
-		typedef boost::function<int64_t(int64_t, int64_t)> OpFunc;
+		typedef std::function<bool(int64_t, int64_t)> CmpFunc;
+		typedef std::function<int64_t(int64_t, int64_t)> OpFunc;
 		std::map<wxString, CmpFunc> m_cmps;
 		std::map<wxString, OpFunc> m_ops;
 

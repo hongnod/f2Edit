@@ -27,8 +27,8 @@
 #include <unicode/locid.h>
 #include <unicode/uversion.h>
 
-#include <boost/foreach.hpp>
-#include <boost/scoped_ptr.hpp>
+//#include <boost/foreach.hpp>
+//#include <boost/scoped_ptr.hpp>
 
 #ifdef _MSC_VER
 # pragma warning( push )
@@ -566,7 +566,7 @@ WXMEnumerationDialog::WXMEnumerationDialog(std::vector<ucs4_t>& seq, size_t& seq
 	//*)
 
 	std::vector<wxString> ns_titles(wxm::NumberingSystemConfig::Instance().GetTitles());
-	BOOST_FOREACH(const wxString& nst, ns_titles)
+	for(const wxString& nst : ns_titles)
 		ChoiceNumSys->Append(nst);
 	ChoiceNumSys->SetSelection(0);
 	m_numsys = wxm::NumberingSystemConfig::Instance().IndexToVal(ChoiceNumSys->GetSelection());

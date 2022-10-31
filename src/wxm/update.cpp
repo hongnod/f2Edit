@@ -33,7 +33,7 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/assign/list_of.hpp>
-#include <boost/foreach.hpp>
+//#include <boost/foreach.hpp>
 #include <algorithm>
 #include <functional>
 #include <limits>

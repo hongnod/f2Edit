@@ -14,8 +14,9 @@
 
 #include <unicode/ucsdet.h>
 #include <unicode/uversion.h>
-#include <boost/foreach.hpp>
-#include <boost/shared_ptr.hpp>
+//#include <boost/foreach.hpp>
+//#include <boost/shared_ptr.hpp>
+#include<memory>
 #include <boost/assign/list_inserter.hpp>
 #include <boost/assign/list_of.hpp>
 #include <boost/range/iterator_range.hpp>
@@ -390,7 +391,7 @@ struct ISO646Checker: public EncodingChecker
 
 	virtual bool MatchText(const ubyte* text, size_t len) const override
 	{
-		BOOST_FOREACH(ubyte b, boost::make_iterator_range(text, text+len))
+		for(ubyte b : boost::make_iterator_range(text, text+len))
 		{
 			if (b==0x00 || b >= 0x80)
 				return false;
@@ -424,13 +425,13 @@ struct EncodingDetector
 
 	std::string DetectEncoding(const ubyte* text, size_t len) const
 	{
-		BOOST_FOREACH(BOMEncMap::value_type bom_enc, m_bom_enc_map)
+		for(BOMEncMap::value_type bom_enc : m_bom_enc_map)
 		{
 			if (MatchBOM(bom_enc.first, text, len))
 				return bom_enc.second;
 		}
 
-		BOOST_FOREACH(const boost::shared_ptr<EncodingChecker> checker, m_checkers)
+		for(const std::shared_ptr<EncodingChecker> checker : m_checkers)
 		{
 			if (checker->MatchText(text, len))
 				return checker->EncodingName();
@@ -442,23 +443,23 @@ struct EncodingDetector
 	EncodingDetector()
 	{
 		boost::assign::push_back(m_checkers)
-			(boost::shared_ptr<EncodingChecker>(new UTF16LEChecker))
-			(boost::shared_ptr<EncodingChecker>(new UTF16BEChecker))
-			(boost::shared_ptr<EncodingChecker>(new UTF8Checker))
-			(boost::shared_ptr<EncodingChecker>(new UTF32LEChecker))
-			(boost::shared_ptr<EncodingChecker>(new UTF32BEChecker))
-			(boost::shared_ptr<EncodingChecker>(new GB18030Checker))
-			(boost::shared_ptr<EncodingChecker>(new ISO646Checker))
+			(std::shared_ptr<EncodingChecker>(new UTF16LEChecker))
+			(std::shared_ptr<EncodingChecker>(new UTF16BEChecker))
+			(std::shared_ptr<EncodingChecker>(new UTF8Checker))
+			(std::shared_ptr<EncodingChecker>(new UTF32LEChecker))
+			(std::shared_ptr<EncodingChecker>(new UTF32BEChecker))
+			(std::shared_ptr<EncodingChecker>(new GB18030Checker))
+			(std::shared_ptr<EncodingChecker>(new ISO646Checker))
 			;
 
-		BOOST_FOREACH(const boost::shared_ptr<EncodingChecker> checker, m_checkers)
+		for(const std::shared_ptr<EncodingChecker> checker : m_checkers)
 		{
 			m_bom_enc_map[checker->BOM()] = checker->EncodingName();
 		}
 	}
 
 private:
-	std::vector<boost::shared_ptr<EncodingChecker> > m_checkers;
+	std::vector<std::shared_ptr<EncodingChecker> > m_checkers;
 
 	typedef std::map<std::string, std::string, BOMIterationPrior> BOMEncMap;
 	BOMEncMap m_bom_enc_map;
@@ -524,7 +525,7 @@ bool MatchMBMoreThanUTF16(const ubyte * text, size_t len)
 	const static std::vector<ubyte> exceptC0bytes( boost::assign::list_of('\t')('\r')('\n')('\v')('\f')('\x1B')
 		.convert_to_container<std::vector<ubyte> >() );
 
-	BOOST_FOREACH(ubyte b, exceptC0bytes)
+	for(ubyte b : exceptC0bytes)
 		byte_cnt[size_t(b)] = 0;
 
 	size_t eff_c0_cnt = 0;

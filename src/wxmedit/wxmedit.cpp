@@ -70,7 +70,7 @@
 
 #include <unicode/brkiter.h>
 #include <boost/static_assert.hpp>
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 #include <algorithm>
 #include <locale.h>
 

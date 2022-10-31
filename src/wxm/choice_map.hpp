@@ -22,7 +22,7 @@
 # pragma warning( pop )
 #endif
 
-#include <boost/foreach.hpp>
+//#include <boost/foreach.hpp>
 #include <boost/noncopyable.hpp>
 #include <map>
 #include <vector>
@@ -110,7 +110,7 @@ public:
 	std::vector<wxString> GetTitles() const
 	{
 		std::vector<wxString> titles;
-		BOOST_FOREACH(const IdxTitleMap::value_type& v, m_idx_title_map)
+		for(const IdxTitleMap::value_type& v : m_idx_title_map)
 			titles.push_back(v.second);
 		return titles;
 	}

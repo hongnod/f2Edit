@@ -34,7 +34,7 @@
 # pragma warning( pop )
 #endif
 
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 
 #ifdef _DEBUG
 #include <crtdbg.h>
@@ -646,7 +646,7 @@ void WXMFindInFilesDialog::FindReplaceInFiles(bool bReplace)
 
 	if(g_Continue)
 	{
-		boost::scoped_ptr<MadEdit> tempedit;
+		std::unique_ptr<MadEdit> tempedit;
 		if(WxRadioButtonDir->GetValue())
 		{
 			tempedit.reset(new wxm::SearchingWXMEdit(this, WxCheckBoxWholeWord->GetValue()));

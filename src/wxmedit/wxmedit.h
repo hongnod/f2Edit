@@ -43,7 +43,8 @@
 #include <unicode/brkiter.h>
 using U_ICU_NAMESPACE::BreakIterator;
 
-#include <boost/shared_ptr.hpp>
+//#include <boost/shared_ptr.hpp>
+#include<memory>
 #include <string>
 #include <algorithm>
 
@@ -437,7 +438,7 @@ private:
     bool m_mouse_in_window;
 
     UErrorCode m_word_bi_status;
-    boost::shared_ptr<BreakIterator> m_word_bi;
+    std::shared_ptr<BreakIterator> m_word_bi;
 
 protected:
 

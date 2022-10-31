@@ -28,7 +28,7 @@
 # pragma warning( pop )
 #endif
 
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 
 #include <algorithm>
 
@@ -2649,7 +2649,7 @@ void MadLines::DetectSyntax(const wxString &filename)
         line.Get(0, buf, sz);
     }
 
-    boost::scoped_ptr<MadSyntax> tmp_Syntax(GetFileSyntax(filename, buf, (int)sz));
+    std::unique_ptr<MadSyntax> tmp_Syntax(GetFileSyntax(filename, buf, (int)sz));
     if(tmp_Syntax->GetTitle() != m_Syntax->GetTitle())
         m_MadEdit->SetSyntax(tmp_Syntax->GetTitle());
 }

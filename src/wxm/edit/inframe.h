@@ -12,7 +12,7 @@
 #include "simple.h"
 
 #include <unicode/numfmt.h>
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 
 namespace wxm
 {
@@ -113,7 +113,7 @@ private:
 	int m_PrintTotalHexLineCount;
 
 	AutoSearcher m_auto_searcher;
-	boost::scoped_ptr <icu::NumberFormat> m_numfmt;
+	std::unique_ptr <icu::NumberFormat> m_numfmt;
 };
 
 } //namespace wxm

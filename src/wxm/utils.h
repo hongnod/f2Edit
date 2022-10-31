@@ -26,7 +26,8 @@
 # pragma warning( pop )
 #endif
 
-#include <boost/shared_ptr.hpp>
+//#include <boost/shared_ptr.hpp>
+#include<memory>
 #include <boost/noncopyable.hpp>
 
 #include <vector>
@@ -102,7 +103,7 @@ struct HexAreaClipboardCopier
 	virtual ~HexAreaClipboardCopier() {}
 };
 
-typedef boost::shared_ptr<HexAreaClipboardCopier> SharedCopierPtr;
+typedef std::shared_ptr<HexAreaClipboardCopier> SharedCopierPtr;
 struct HexAreaClipboardCopyProxy: public ChoiceMap<HexAreaClipboardCopyProxy, SharedCopierPtr>
 {
 	void SelectCopierByConfig(const wxString& cfg)
@@ -160,7 +161,7 @@ struct HexAreaClipboardPaster
 	virtual ~HexAreaClipboardPaster() {}
 };
 
-typedef boost::shared_ptr<HexAreaClipboardPaster> SharedPasterPtr;
+typedef std::shared_ptr<HexAreaClipboardPaster> SharedPasterPtr;
 struct HexAreaClipboardPasteProxy: public ChoiceMap<HexAreaClipboardPasteProxy, SharedPasterPtr>
 {
 	void SelectConditionByConfig(const wxString& cfg)

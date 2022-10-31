@@ -41,8 +41,8 @@
 #include <unicode/uchar.h>
 #include <unicode/locid.h>
 
-#include <boost/foreach.hpp>
-#include <boost/scoped_ptr.hpp>
+//#include <boost/foreach.hpp>
+//#include <boost/scoped_ptr.hpp>
 #ifdef _MSC_VER
 # pragma warning(push)
 # pragma warning(disable:4819)
@@ -88,7 +88,7 @@ void SetL10nHtmlColors()
 void FileList::Append(const wxString& file, const LineNumberList& bmklns)
 {
 	m_files += file + wxT("<");
-	BOOST_FOREACH (size_t ln, bmklns)
+	for (size_t ln : bmklns)
 		m_files << ln << wxT("<");
 	m_files += wxT("|");
 
@@ -191,7 +191,7 @@ wxString FilePathNormalCase(const wxString& name)
 	// and the filename insensitive of Windows is also buggy
 	// but they are different
 	wxString uppername;
-	BOOST_FOREACH(wxChar ch, name)
+	for(wxChar ch: name)
 		uppername.append(1, (wxChar)u_toupper((UChar32)(unsigned int)ch));
 
 	return uppername;
@@ -295,7 +295,7 @@ bool GetRawBytesFromHexUnicodeText(std::vector<char>& cs, const std::vector<ucs4
 {
 	std::vector<int> tmp_hex;
 
-	BOOST_FOREACH(ucs4_t u, ucs)
+	for(ucs4_t u: ucs)
 	{
 		if (u_isUWhiteSpace(u) && tmp_hex.size()%2==0)
 			continue;
@@ -416,7 +416,7 @@ bool ConfigInUserHomeFromRegistry()
 {
 	wxLogNull nolog;
 
-	boost::scoped_ptr<wxRegKey> pRegKey( new wxRegKey(g_wxsRegKeyWxMEdit) );
+	std::unique_ptr<wxRegKey> pRegKey( new wxRegKey(g_wxsRegKeyWxMEdit) );
 
 	if(!pRegKey->Exists())
 		return false;
@@ -536,7 +536,7 @@ static inline void MSW_GetFontName(const std::wstring codepage, std::wstring &fo
 	wxLogNull nolog;
 
 	const wxString MIMEDB(wxm::s_wxsRegkeyClasses + wxT("MIME\\Database\\Codepage\\"));
-	boost::scoped_ptr<wxRegKey> pRegKey(new wxRegKey(MIMEDB + codepage.c_str()));
+	std::unique_ptr<wxRegKey> pRegKey(new wxRegKey(MIMEDB + codepage.c_str()));
 
 	if (!pRegKey->Exists())
 		return;

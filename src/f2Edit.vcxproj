@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{d5274b3a-b7bd-4990-8c10-b846b6339ddd}</ProjectGuid>
-    <RootNamespace>wxMEdit</RootNamespace>
+    <RootNamespace>f2Edit</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -205,11 +205,11 @@
     <ClInclude Include="xm\uutils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="wxMEdit.rc" />
+    <ResourceCompile Include="f2Edit.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="small.ico" />
-    <Image Include="wxMEdit.ico" />
+    <Image Include="f2Edit.ico" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dialog\wxmedit_about_dialog.cpp" />

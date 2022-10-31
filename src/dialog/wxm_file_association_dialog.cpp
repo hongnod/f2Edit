@@ -30,7 +30,7 @@
 # pragma warning( pop )
 #endif
 
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 
 #ifdef _DEBUG
 #include <crtdbg.h>
@@ -113,7 +113,7 @@ bool DetectType(wxString type)
 	wxLogNull nolog; // disable error log
 
 	wxString value;
-	boost::scoped_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + type) );
+	std::unique_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + type) );
 	if(pRegKey->Exists())
 		pRegKey->QueryValue(wxEmptyString, value);
 
@@ -139,7 +139,7 @@ void AddType(wxString type)
 	wxString value;
 	wxString wxmedit_type = wxString(wxT("wxMEdit")) + type;
 
-	boost::scoped_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + type ));
+	std::unique_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + type ));
 	if(!pRegKey->Exists())
 		pRegKey->Create();
 	else
@@ -153,7 +153,7 @@ void AddType(wxString type)
 
 			//if(type == wxT(".txt"))
 			//{
-			//	boost::scoped_ptr<wxRegKey> pRegKey1( new wxRegKey(wxm::s_wxsRegkeyClasses + type) );
+			//	std::unique_ptr<wxRegKey> pRegKey1( new wxRegKey(wxm::s_wxsRegkeyClasses + type) );
 			//	pRegKey->QueryValue(wxEmptyString, txt_name);
 			//}
 		}
@@ -200,7 +200,7 @@ void RemoveType(wxString type)
 	wxString value, old_default;
 	wxString wxmedit_type = wxString(wxT("wxMEdit")) + type;
 
-	boost::scoped_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + type) );
+	std::unique_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + type) );
 	if(pRegKey->Exists() && pRegKey->HasValue(wxT("Old_Default")))
 	{
 		pRegKey->QueryValue(wxT("Old_Default"), old_default);

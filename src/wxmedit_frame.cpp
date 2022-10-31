@@ -57,9 +57,9 @@
 
 #include <unicode/uchar.h>
 
-#include <boost/foreach.hpp>
+//#include <boost/foreach.hpp>
 #include <boost/assign/list_of.hpp>
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 
 #include <vector>
 #include <utility>
@@ -704,7 +704,7 @@ void OnReceiveMessage(const wchar_t *msg, size_t size)
 
     wxm::FileList filelist(msg);
 
-    BOOST_FOREACH (const wxm::FileList::FileDesc& fdesc, filelist.List())
+    for (const wxm::FileList::FileDesc& fdesc: filelist.List())
         g_MainFrame->OpenFile(fdesc.file, false, fdesc.bmklinenums);
 }
 
@@ -1600,7 +1600,7 @@ void MadEditFrame::EncodingGroupMenuAppend(ssize_t idx, const wxString& text, si
     int itemid = menuEncoding1 + int(idx);
     xm::EncodingManager& encmgr = xm::EncodingManager::Instance();
     std::vector<xm::EncodingGroupID> vec = encmgr.GetEncodingGroups(idx);
-    BOOST_FOREACH(xm::EncodingGroupID gid, vec)
+    for(xm::EncodingGroupID gid: vec)
     {
         EncGrps::iterator it = m_encgrps.find(gid);
         if (it == m_encgrps.end())
@@ -1625,7 +1625,7 @@ size_t MadEditFrame::ReserveEncodingGrupMenus()
         boost::assign::list_of(xm::ENCG_ISO8859)(xm::ENCG_WINDOWS)(xm::ENCG_OEM)(xm::ENCG_DEFAULT);
 
     size_t i = 0;
-    BOOST_FOREACH(xm::EncodingGroupID gid, reserve_grps)
+    for(xm::EncodingGroupID gid: reserve_grps)
     {
         wxMenu* menu = new wxMenu();
         g_Menu_View_Encoding->Insert(i, menuEncodingGroup1 + (int)i, encmgr.EncodingGroupToName(gid).c_str(), menu);
@@ -1875,7 +1875,7 @@ void MadEditFrame::CreateGUIControls()
                                menuCloseAllToTheLeft, menuCloseAllToTheRight, 0, menuCopyFullPath,
                                menuCopyFilename, menuCopyFileDir, 0, menuPrintPreview, menuPrint };
 
-    BOOST_FOREACH(int itemid, FileMenuInTabIDs)
+    for(int itemid: FileMenuInTabIDs)
         CloneMenuItem(g_PopMenu_Tab, g_Menu_File, itemid);
 
     // set FindNext/FindPrev keys for search/replace dialog
@@ -3584,7 +3584,7 @@ void MadEditFrame::OnFilePrint(wxCommandEvent& event)
 
 #if defined(__WXMSW__)
     // using a temp modal-dialog to avoid the user change the contents of Edit
-    boost::scoped_ptr<TempPrintDialog>(new TempPrintDialog(this))->ShowModal();
+    std::unique_ptr<TempPrintDialog>(new TempPrintDialog(this))->ShowModal();
 #else
     PrintOut(this);
 #endif
@@ -4507,19 +4507,19 @@ void MadEditFrame::OnToolsOptions(wxCommandEvent& event)
 #ifdef __WXMSW__
         if(g_OptionsDialog->WxCheckBoxRightClickMenu->GetValue())
         {
-            boost::scoped_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + wxT("*\\shell\\wxMEdit\\command")) );
+            std::unique_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + wxT("*\\shell\\wxMEdit\\command")) );
             pRegKey->Create();
             wxString exepath=GetExecutablePath();
             pRegKey->SetValue(wxEmptyString, wxString(wxT('"'))+exepath+wxString(wxT("\" \"%1\"")));
         }
         else
         {
-            boost::scoped_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + wxT("*\\shell\\wxMEdit")) );
+            std::unique_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::s_wxsRegkeyClasses + wxT("*\\shell\\wxMEdit")) );
             pRegKey->DeleteSelf();
         }
 
         bool cfg_in_usrhome = g_OptionsDialog->WxCheckBoxConfigInUserHome->GetValue();
-        boost::scoped_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::g_wxsRegKeyWxMEdit) );
+        std::unique_ptr<wxRegKey> pRegKey( new wxRegKey(wxm::g_wxsRegKeyWxMEdit) );
         pRegKey->Create();
         pRegKey->SetValue(wxm::g_wxsRegValConfigInHome, long(cfg_in_usrhome));
 #endif
@@ -5016,7 +5016,7 @@ const wxString& GetCredits()
     static wxString credits;
     if (credits.empty())
     {
-        BOOST_FOREACH(const wxm::CreditsList::value_type& v, wxm::s_wxMEdit_Credits)
+        for(const wxm::CreditsList::value_type& v : wxm::s_wxMEdit_Credits)
             credits += wxString::Format(wxT("  %-18s %s\n"), v.first.c_str(), wxGetTranslation(v.second.c_str()));
     }
 

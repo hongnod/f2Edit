@@ -209,7 +209,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="wxMEdit.rc">
+    <ResourceCompile Include="f2Edit.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -217,7 +217,7 @@
     <Image Include="small.ico">
       <Filter>资源文件</Filter>
     </Image>
-    <Image Include="wxMEdit.ico">
+    <Image Include="f2Edit.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
