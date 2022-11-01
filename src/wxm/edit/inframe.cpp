@@ -25,7 +25,9 @@
 # if wxMAJOR_VERSION == 3
 #include <wx/debug.h>
 # endif
-#include <boost/format.hpp>
+//#include <boost/format.hpp>
+#include "format.h"
+#include "xchar.h"
 // disable 4996,4819 }
 #ifdef _MSC_VER
 # pragma warning( pop )
@@ -1048,12 +1050,12 @@ wxString InFrameWXMEdit::FormattedNumber(int64_t num)
 std::wstring WindowsStyleFilesize(double size, const std::wstring& unit)
 {
 	if (size >= 100)
-		return (boost::wformat(L"%.0f%s") % floor(size) % unit).str();
+		return fmt::format(L"{:.0f}{}", floor(size), unit);
 
 	if (size >= 10)
-		return (boost::wformat(L"%.1f%s") % (floor(size*10)/10) % unit).str();
+		return fmt::format(L"{:.1f}{}", (floor(size*10)/10), unit);
 
-	return (boost::wformat(L"%.2f%s") % (floor(size*100)/100) % unit).str();
+	return fmt::format(L"{:.2f}{}" , (floor(size*100)/100) , unit);
 }
 
 std::wstring HumanReadableFilesize(uint64_t size)
@@ -1071,7 +1073,7 @@ std::wstring HumanReadableFilesize(uint64_t size)
 	if (size >= KiB)
 		return WindowsStyleFilesize(double(size) / KiB, L"KiB");
 
-	return (boost::wformat(L"%u") % size).str();
+	return fmt::format(L"{:d}", size);
 }
 
 #ifdef _DEBUG

@@ -32,8 +32,8 @@ std::string CheckUpdates(bool check_prerelease=g_check_prerelease);
 
 void ConfirmUpdate(bool notify_all=true);
 
-void AutoCheckUpdates(wxFileConfig* cfg);
-void ManualCheckUpdates();
+//void AutoCheckUpdates(wxFileConfig* cfg);
+//void ManualCheckUpdates();
 
 struct UpdatePeriods: public ChoiceMap<UpdatePeriods, time_t>
 {

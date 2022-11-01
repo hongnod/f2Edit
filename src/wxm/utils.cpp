@@ -47,7 +47,8 @@
 # pragma warning(push)
 # pragma warning(disable:4819)
 #endif
-#include <boost/format.hpp>
+//#include <boost/format.hpp>
+#include "format.h"
 #ifdef _MSC_VER
 # pragma warning(pop)
 #endif
@@ -162,7 +163,7 @@ wxString WXMLanguageQuery()
 	std::string lang = loc.getLanguage();
 	std::string ctry = loc.getCountry();
 
-	return wxString((boost::format("?hl=%s_%s") % lang % ctry).str().c_str(), wxConvUTF8);
+	return wxString((fmt::format("?hl={}_{}"), lang, ctry).c_str(), wxConvUTF8);
 }
 
 void OpenURL(const wxString& url)

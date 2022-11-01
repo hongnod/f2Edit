@@ -34,7 +34,8 @@
 # pragma warning( push )
 # pragma warning( disable : 4819 )
 #endif
-#include <boost/format.hpp>
+//#include <boost/format.hpp>
+#include "format.h"
 #ifdef _MSC_VER
 # pragma warning( pop )
 #endif
@@ -47,6 +48,7 @@
 # pragma warning( push )
 # pragma warning( disable : 4250 )
 #endif
+#include <format>
 
 namespace wxm
 {
@@ -109,9 +111,9 @@ private:
 	{
 		if (m_base != 'X' && m_base != 'x' && m_base != 'o')
 			return false;
-		std::string fmt = "%";
-		fmt.push_back(m_base);
-		us = UnicodeString((boost::format(fmt) % n).str().c_str());
+		std::string f = ":";
+		f.push_back(m_base);
+		us = UnicodeString((fmt::format({f}, n)).c_str());
 		return true;
 	}
 

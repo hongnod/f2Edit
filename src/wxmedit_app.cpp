@@ -406,7 +406,7 @@ bool MadEditApp::OnInit()
     }
 #endif
 
-    wxm::AutoCheckUpdates(cfg);
+    //wxm::AutoCheckUpdates(cfg);
 
     // reload files previously opened
     wxString files;

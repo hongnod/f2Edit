@@ -83,8 +83,8 @@
     <LibraryPath>c:\Program Files (x86)\CURL\lib;C:\Working\icu\icu\icu4c\lib64;C:\Working\wxWidgets\lib\vc_x64_lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\Codelabs\libs\icu-static\include;D:\Codelabs\libs\boost_1_80_0;D:\Codelabs\libs\wx\include;D:\Codelabs\libs\wx\include\msvc;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Codelabs\libs\wx\lib\vc_x64_lib;D:\Codelabs\libs\icu-static\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Codelabs\libs\icu-static\include;D:\Codelabs\libs\boost_1_80_0;D:\Codelabs\libs\wx\include;D:\Codelabs\libs\wx\include\msvc;D:\Codelabs\libs\fmt_9.0.0_vc14x_x64\include\fmt;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Codelabs\libs\wx\lib\vc_x64_lib;D:\Codelabs\libs\icu-static\lib;D:\Codelabs\libs\fmt_9.0.0_vc14x_x64\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -135,13 +135,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_WINDOWS;U_STATIC_IMPLEMENTATION;wxMONOLITHIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>wxexpat.lib;wxjpeg.lib;wxmsw32u.lib;wxpng.lib;wxregexu.lib;wxscintilla.lib;wxtiff.lib;wxzlib.lib;sicudt.lib;sicuin.lib;sicuio.lib;sicutest.lib;sicutu.lib;sicuuc.lib;Imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>wxexpat.lib;wxjpeg.lib;wxmsw32u.lib;wxpng.lib;wxregexu.lib;wxscintilla.lib;wxtiff.lib;wxzlib.lib;sicudt.lib;sicuin.lib;sicuio.lib;sicutest.lib;sicutu.lib;sicuuc.lib;Imm32.lib;fmt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

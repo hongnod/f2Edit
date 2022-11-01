@@ -2429,13 +2429,13 @@ void MadEditFrame::OnResultAutoCheckUpdates(wxEvent &evt)
     notify_all = true;
 #endif
 
-    wxm::ConfirmUpdate(notify_all);
+   // wxm::ConfirmUpdate(notify_all);
     evt.Skip();
 }
 
 void MadEditFrame::OnResultManualCheckUpdates(wxEvent &evt)
 {
-    wxm::ConfirmUpdate();
+    //wxm::ConfirmUpdate();
     evt.Skip();
 }
 
@@ -5008,7 +5008,7 @@ void MadEditFrame::OnWindowNextWindow(wxCommandEvent& event)
 
 void MadEditFrame::OnHelpCheckUpdates(wxCommandEvent& event)
 {
-    wxm::ManualCheckUpdates();
+    //wxm::ManualCheckUpdates();
 }
 
 const wxString& GetCredits()

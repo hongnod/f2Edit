@@ -1483,7 +1483,7 @@ void WXMEditOptionsDialog::DateTimeMarkClick(wxCommandEvent& event)
 
 void WXMEditOptionsDialog::WxButtonCheckNowClick(wxCommandEvent& event)
 {
-	wxm::ManualCheckUpdates();
+	//wxm::ManualCheckUpdates();
 }
 
 void WXMEditOptionsDialog::OnUpdateUI_DialogOptions_CheckNow(wxUpdateUIEvent& event)

@@ -142,7 +142,8 @@ std::string GetVersionFromRemoteChangeLog()
 std::vector<unsigned int> ParseVersion(const std::string& ver)
 {
 	std::vector<std::string> svec;
-	algo::split(svec, ver, std::bind1st(std::equal_to<char>(),'.') );
+	//std::vector<unsigned int> uvec{ 0,0,0 };
+	algo::split(svec, ver, std::bind(std::equal_to<char>(), std::placeholders::_1,'.') );
 
 	std::vector<unsigned int> uvec = boost::assign::list_of(0u)(0u)(0u)(0u);
 

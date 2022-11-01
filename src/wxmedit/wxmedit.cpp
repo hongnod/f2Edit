@@ -63,7 +63,8 @@
 # pragma warning(push)
 # pragma warning(disable:4819)
 #endif
-#include <boost/format.hpp>
+//#include <boost/format.hpp>
+#include "format.h"
 #ifdef _MSC_VER
 # pragma warning(pop)
 #endif
@@ -4391,7 +4392,7 @@ void MadEdit::UCStoBlock(const ucs4_t *ucs, size_t count, MadBlock & block)
             uc = *ucs;
             wxASSERT(uc>=0 && uc<=0x10FFFF);
 
-            std::string ascii_uescape = (boost::format("{U+%04X}") % uc).str();
+            std::string ascii_uescape = fmt::format("{U+:04X}",uc);
 
             for(size_t i=0; i<ascii_uescape.size(); ++i)
             {
